@@ -1,7 +1,8 @@
 {
-  "name": "ocaml-protoc-plugin-runtime-bs",
+  "name": "@buhta/ocaml-protoc-plugin",
   "namespace": "Ocaml_protoc_plugin",
   "refmt": 3,
+  "bsc-flags": ["-w", "-44"],
   "sources": [
     {
       "dir": "src/ocaml_protoc_plugin"

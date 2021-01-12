@@ -1,12 +1,12 @@
 {
-  "name": "ocaml-protoc-plugin-runtime-bs",
-  "version": "0.0.1",
+  "name": "@buhta/ocaml-protoc-plugin",
+  "version": "4.1.8",
   "description": "BuckleScript runtime for ocaml-protoc-plugin",
   "peerDependencies": {
-    "bs-platform": ">=5.0.0"
+    "bs-platform": ">=8.0.0"
   },
   "devDependencies": {
-    "bs-platform": "6.0.1"
+    "bs-platform": "^8.0.0"
   },
   "scripts": {
     "build": "bsb -clean-world -make-world"
@@ -19,7 +19,7 @@
   ],
   "license": "Apache-2.0",
   "files": [
-    "./bsconfig.json",
-    "./src/protobuf"
+    "bsconfig.json",
+    "src/ocaml_protoc_plugin"
   ]
 }
