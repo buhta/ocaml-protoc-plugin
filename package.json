@@ -1,9 +1,12 @@
 {
   "name": "@buhta/ocaml-protoc-plugin",
-  "version": "4.1.8",
+  "version": "4.1.11",
   "description": "BuckleScript runtime for ocaml-protoc-plugin",
   "peerDependencies": {
     "bs-platform": ">=8.0.0"
+  },
+  "dependencies": {
+    "ocaml-string-convert": "^0.0.4"
   },
   "devDependencies": {
     "bs-platform": "^8.0.0"

@@ -49,7 +49,7 @@ let rec field_of_spec: type a. a spec -> a -> Field.t = function
   | SFixed32_int -> fun v -> Fixed_32_bit (Int32.of_int v)
 
   | Bool -> fun v -> unsigned_varint (match v with | true -> 1L | false -> 0L)
-  | String -> fun v -> Length_delimited {offset = 0; length = String.length v; data = v}
+  | String -> fun v -> Length_delimited {offset = 0; length = String.length ( Utf8_string.toUtf8String v ); data = Utf8_string.toUtf8String v}
   | Bytes -> fun v -> Length_delimited {offset = 0; length = Bytes.length v; data = Bytes.to_string v}
   | Enum f ->
     let to_field = field_of_spec UInt64 in

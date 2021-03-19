@@ -122,7 +122,7 @@ let rec type_of_spec: type a. a spec -> 'b * a decoder =
       | Field.Varint v -> of_int (Int64.to_int v)
       | field -> error_wrong_field "enum" field)
   | String -> (`Length_delimited, function
-      | Field.Length_delimited {offset; length; data} -> return (String.sub ~pos:offset ~len:length data)
+      | Field.Length_delimited {offset; length; data} -> return ( Utf8_string.fromUtf8String(String.sub ~pos:offset ~len:length data))
       | field -> error_wrong_field "string" field)
   | Bytes -> (`Length_delimited, function
       | Field.Length_delimited {offset; length; data} -> return (String.sub ~pos:offset ~len:length data |> Bytes.of_string)
